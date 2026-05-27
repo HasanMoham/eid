@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كل سنة وأنتِ طيبة يا عيدي وعيديتي 💖</title>
+    
+    <!-- Google Fonts: Elegant Calligraphy & Premium Sans-Serif for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=El+Messiri:wght@400;600;700&family=Reem+Kufi:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 for elegant modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Floating Particles Canvas -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <!-- Glowing Background Decorative Orbs -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <div class="app-container">
+        
+        <!-- Premium Header Controls (Floating Bar) -->
+        <header class="glass-header">
+            <div class="header-logo">
+                <span class="logo-text">ذكرياتنا الجميلة ✨</span>
+            </div>
+            
+            <div class="header-controls">
+                <!-- Petals / Sparkles Toggle -->
+                <button id="toggle-particles" class="control-btn" title="تشغيل/إيقاف بتلات الورد">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span class="btn-tooltip">تأثيرات</span>
+                </button>
+                
+                <!-- Music Control Box -->
+                <div class="music-control-wrapper">
+                    <button id="toggle-music" class="control-btn music-btn" title="تشغيل الموسيقى الهادئة">
+                        <i class="fa-solid fa-music"></i>
+                        <!-- Custom visualizer bars -->
+                        <span class="visualizer-container">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </span>
+                    </button>
+                    <!-- Audio Element (Ambient Piano Melody) -->
+                    <audio id="ambient-audio" loop preload="auto">
+                        <source src="https://assets.mixkit.co/music/preview/mixkit-beautiful-dream-493.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Title / Greeting Section -->
+        <section class="hero-section">
+            <div class="romantic-badge">
+                <i class="fa-solid fa-heart beat-animation"></i>
+                <span>عِيد سَعِيد لِروحي</span>
+            </div>
+            <h1 class="main-greeting animate-title">
+                كل سنة وأنتِ طيبة <span class="gradient-text">يا عيدي وعيديتي</span>
+            </h1>
+            <p class="sub-greeting">
+                ألبوم الصور وذكرياتنا الجميلة معاً. اضغط على أي خانة لإضافة صورتكِ وصناعة شريط الذكريات الخاص بنا.
+            </p>
+        </section>
+
+        <!-- Main Content Area: Staged side-by-side or stacked grid -->
+        <main class="album-content">
+            
+            <!-- Vertical Film Strip Wrapper (4 Photo Slots) -->
+            <div class="strip-column vertical-section">
+                <div class="section-label">
+                    <i class="fa-solid fa-film"></i>
+                    <span>شريط الذكريات</span>
+                </div>
+                
+                <!-- Film Booth Strip Container -->
+                <div class="film-strip vertical-strip" id="vertical-strip-container">
+                    <div class="strip-header-holes"></div>
+                    
+                    <!-- 4 Photo Slots -->
+                    <div class="photo-slot" data-slot-id="v1" data-slot-type="vertical">
+                        <div class="sprocket-hole hole-left"></div>
+                        <div class="sprocket-hole hole-right"></div>
+                        <div class="slot-inner">
+                            <div class="slot-placeholder">
+                                <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                <span>اضغط لإضافة لقطة</span>
+                            </div>
+                            <img src="assets/d/1.jpeg" alt="ذكرى عمودية ١" class="slot-image">
+                            <div class="slot-caption">أول لقاء لنا 🌸</div>
+                        </div>
+                    </div>
+
+                    <div class="photo-slot" data-slot-id="v2" data-slot-type="vertical">
+                        <div class="sprocket-hole hole-left"></div>
+                        <div class="sprocket-hole hole-right"></div>
+                        <div class="slot-inner">
+                            <div class="slot-placeholder">
+                                <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                <span>اضغط لإضافة لقطة</span>
+                            </div>
+                            <img src="assets/d/2.jpeg" alt="ذكرى عمودية ٢" class="slot-image">
+                            <div class="slot-caption">ضحكتكِ الجميلة 💫</div>
+                        </div>
+                    </div>
+
+                    <div class="photo-slot" data-slot-id="v3" data-slot-type="vertical">
+                        <div class="sprocket-hole hole-left"></div>
+                        <div class="sprocket-hole hole-right"></div>
+                        <div class="slot-inner">
+                            <div class="slot-placeholder">
+                                <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                <span>اضغط لإضافة لقطة</span>
+                            </div>
+                            <img src="assets/d/3.jpeg" alt="ذكرى عمودية ٣" class="slot-image">
+                            <div class="slot-caption">بجواركِ دائماً ❤️</div>
+                        </div>
+                    </div>
+
+                    <div class="photo-slot" data-slot-id="v4" data-slot-type="vertical">
+                        <div class="sprocket-hole hole-left"></div>
+                        <div class="sprocket-hole hole-right"></div>
+                        <div class="slot-inner">
+                            <div class="slot-placeholder">
+                                <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                <span></span>
+                            </div>
+                            <!-- Fallback to default photo 1 or can use same -->
+                            <img src="assets/d/4.jpeg" alt="ذكرى عمودية ٤" class="slot-image select-custom-filter" style="filter: sepia(0.3)">
+                            <div class="slot-caption">أنتِ كل أعيادي ✨</div>
+                        </div>
+                    </div>
+
+                    <div class="strip-footer-holes"></div>
+                </div>
+            </div>
+
+            <!-- Horizontal Film Strip Wrapper (3 Photo Slots) -->
+            <div class="strip-column horizontal-section">
+                <div class="section-label">
+                    <i class="fa-solid fa-images"></i>
+                    <span>شريط الذكريات</span>
+                </div>
+                
+                <!-- Film Booth Strip Container (Horizontal) -->
+                <div class="film-strip-horizontal-wrapper">
+                    <div class="film-strip horizontal-strip" id="horizontal-strip-container">
+                        <!-- Upper sprockets row -->
+                        <div class="sprockets-row top-sprockets">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        
+                        <!-- 3 Horizontal Photo Slots -->
+                        <div class="photo-slot horizontal-slot" data-slot-id="h1" data-slot-type="horizontal">
+                            <div class="slot-inner">
+                                <div class="slot-placeholder">
+                                    <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                    <span>اضغط لإضافة لقطة</span>
+                                </div>
+                                <img src="assets/d/6.jpeg" alt="ذكرى أفقية ١" class="slot-image">
+                                <div class="slot-caption">سعادة مشتركة 🥰</div>
+                            </div>
+                        </div>
+
+                        <div class="photo-slot horizontal-slot" data-slot-id="h2" data-slot-type="horizontal">
+                            <div class="slot-inner">
+                                <div class="slot-placeholder">
+                                    <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                    <span>اضغط لإضافة لقطة</span>
+                                </div>
+                                <img src="assets/d/5.jpeg" alt="ذكرى أفقية ٢" class="slot-image">
+                                <div class="slot-caption">عيدي يكتمل بكِ 🎁</div>
+                            </div>
+                        </div>
+
+                        <div class="photo-slot horizontal-slot" data-slot-id="h3" data-slot-type="horizontal">
+                            <div class="slot-inner">
+                                <div class="slot-placeholder">
+                                    <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                    <span>اضغط لإضافة لقطة</span>
+                                </div>
+                                <img src="assets/d/1.jpeg" alt="ذكرى أفقية ٣" class="slot-image">
+                                <div class="slot-caption">كل عام وأنتِ بقلبي 💖</div>
+                            </div>
+                        </div>
+
+                        <!-- Lower sprockets row -->
+                        <div class="sprockets-row bottom-sprockets">
+                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heartwarming Love Note Widget (Premium UI Addition) -->
+                <div class="glass-card love-note-card">
+                    <div class="love-note-header">
+                        <i class="fa-solid fa-envelope-open-text header-icon"></i>
+                        <h3>رسالة عيدي لكِ 💌</h3>
+                    </div>
+                    <div class="love-note-body">
+                        <p id="love-note-text" contenteditable="true">
+                            "في هذا العيد، أردت أن أجمع بعضاً من أجمل لحظاتنا معاً. أنتِ لستِ فقط عيدي، بل أنتِ هديتي الأجمل في كل يوم وعام. كل سنة وأنتِ طيبة وجميلة وبجانب قلبي دائماً..."
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Future Moments Section (Dynamic Carousel) -->
+        <section class="future-moments-section">
+            <div class="section-label future-label">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <span>لحظاتنا القادمة</span>
+            </div>
+            
+            <p class="future-desc">
+                هنا نعرض أحلامنا وتطلعاتنا للمستقبل. 
+            </p>
+
+            <!-- Shuffle Strip -->
+            <div class="film-strip-horizontal-wrapper future-strip-wrapper">
+                <div class="film-strip horizontal-strip future-strip" id="future-strip-container">
+                    <div class="sprockets-row top-sprockets">
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    
+                    <!-- 4 Active Display Slots -->
+                    <div class="photo-slot horizontal-slot future-slot" id="f-display-1" data-slot-id="f1" data-slot-type="future">
+                        <div class="slot-inner">
+                            <div class="slot-placeholder">
+                                <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                <span>اضغط لإضافة لقطة</span>
+                            </div>
+                            <img src="assets/9.png" alt="لقطة مستقبلية ١" class="slot-image">
+                            <div class="slot-caption"></div>
+                        </div>
+                    </div>
+
+                    <div class="photo-slot horizontal-slot future-slot" id="f-display-2" data-slot-id="f2" data-slot-type="future">
+                        <div class="slot-inner">
+                            <div class="slot-placeholder">
+                                <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                <span>اضغط لإضافة لقطة</span>
+                            </div>
+                            <img src="assets/11.jpeg" alt="لقطة مستقبلية ٢" class="slot-image">
+                            <div class="slot-caption"></div>
+                        </div>
+                    </div>
+
+                    <div class="photo-slot horizontal-slot future-slot" id="f-display-3" data-slot-id="f3" data-slot-type="future">
+                        <div class="slot-inner">
+                            <div class="slot-placeholder">
+                                <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                <span>اضغط لإضافة لقطة</span>
+                            </div>
+                            <img src="assets/13.jpeg" alt="لقطة مستقبلية ٣" class="slot-image">
+                            <div class="slot-caption"></div>
+                        </div>
+                    </div>
+
+                    <div class="photo-slot horizontal-slot future-slot" id="f-display-4" data-slot-id="f4" data-slot-type="future">
+                        <div class="slot-inner">
+                            <div class="slot-placeholder">
+                                <i class="fa-solid fa-plus-circle upload-icon"></i>
+                                <span>اضغط لإضافة لقطة</span>
+                            </div>
+                            <img src="assets/8.jpeg" alt="لقطة مستقبلية ٤" class="slot-image">
+                            <div class="slot-caption"></div>
+                        </div>
+                    </div>
+
+                    <div class="sprockets-row bottom-sprockets">
+                        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expandable Pool Management Drawer -->
+            <div class="pool-management-card glass-card">
+                <button id="toggle-pool-btn" class="pool-toggle-btn">
+                    <span><i class="fa-solid fa-images"></i> تعديل كامل ألبوم المستقبل (٦ صور للتبديل)</span>
+                    <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                </button>
+                
+                <div class="pool-grid-wrapper" id="pool-grid-wrapper">
+                    <div class="pool-grid">
+                        <!-- 6 Slots for direct editing -->
+                        <div class="pool-slot-card" data-slot-id="f1" data-slot-type="future">
+                            <div class="pool-slot-thumb">
+                                <img src="assets/photo4.png" alt="مستقبل ١" id="pool-thumb-f1">
+                            </div>
+                            <div class="pool-slot-info">
+                                <span class="pool-slot-title">اللقطة الأولى</span>
+                                <span class="pool-slot-desc" id="pool-desc-f1">بيت أحلامنا الدافئ 🏡</span>
+                            </div>
+                        </div>
+                        <div class="pool-slot-card" data-slot-id="f2" data-slot-type="future">
+                            <div class="pool-slot-thumb">
+                                <img src="assets/photo5.png" alt="مستقبل ٢" id="pool-thumb-f2">
+                            </div>
+                            <div class="pool-slot-info">
+                                <span class="pool-slot-title">اللقطة الثانية</span>
+                                <span class="pool-slot-desc" id="pool-desc-f2">رحلة تحت النجوم 🌌</span>
+                            </div>
+                        </div>
+                        <div class="pool-slot-card" data-slot-id="f3" data-slot-type="future">
+                            <div class="pool-slot-thumb">
+                                <img src="assets/photo1.png" alt="مستقبل ٣" id="pool-thumb-f3">
+                            </div>
+                            <div class="pool-slot-info">
+                                <span class="pool-slot-title">اللقطة الثالثة</span>
+                                <span class="pool-slot-desc" id="pool-desc-f3">مغامرات جديدة 🎒</span>
+                            </div>
+                        </div>
+                        <div class="pool-slot-card" data-slot-id="f4" data-slot-type="future">
+                            <div class="pool-slot-thumb">
+                                <img src="assets/photo2.png" alt="مستقبل ٤" id="pool-thumb-f4">
+                            </div>
+                            <div class="pool-slot-info">
+                                <span class="pool-slot-title">اللقطة الرابعة</span>
+                                <span class="pool-slot-desc" id="pool-desc-f4">عائلتنا السعيدة 👨‍👩‍👧</span>
+                            </div>
+                        </div>
+                        <div class="pool-slot-card" data-slot-id="f5" data-slot-type="future">
+                            <div class="pool-slot-thumb">
+                                <img src="assets/photo3.png" alt="مستقبل ٥" id="pool-thumb-f5">
+                            </div>
+                            <div class="pool-slot-info">
+                                <span class="pool-slot-title">اللقطة الخامسة</span>
+                                <span class="pool-slot-desc" id="pool-desc-f5">بناء ذكريات أكثر 🛠️</span>
+                            </div>
+                        </div>
+                        <div class="pool-slot-card" data-slot-id="f6" data-slot-type="future">
+                            <div class="pool-slot-thumb">
+                                <img src="assets/photo5.png" alt="مستقبل ٦" id="pool-thumb-f6">
+                            </div>
+                            <div class="pool-slot-info">
+                                <span class="pool-slot-title">اللقطة السادسة</span>
+                                <span class="pool-slot-desc" id="pool-desc-f6">تفاصيل جميلة ✨</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Footer -->
+        <footer class="app-footer">
+            <p>صُنع بكل حب وشغف لتوثيق اللحظات السعيدة ❤️</p>
+        </footer>
+
+    </div>
+
+    <!-- Image Editor & Upload Modal -->
+    <div class="modal-overlay" id="upload-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3>تخصيص اللقطة الجميلة ✨</h3>
+                <button class="close-modal-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Dropzone / Image Selector -->
+                <div class="upload-dropzone" id="dropzone">
+                    <input type="file" id="file-input" accept="image/*" class="file-input-hidden">
+                    <div class="dropzone-prompt" id="dropzone-prompt">
+                        <i class="fa-solid fa-cloud-arrow-up upload-big-icon"></i>
+                        <h4>اسحب الصورة هنا أو اضغط للاختيار</h4>
+                        <p>يدعم صيغ JPG, PNG, WebP</p>
+                    </div>
+                    <!-- Real-time Preview Inside Modal -->
+                    <div class="image-preview-container" id="preview-container">
+                        <img id="modal-preview-img" src="" alt="معاينة الصورة" class="preview-img">
+                    </div>
+                </div>
+
+                <!-- Filters Control Section -->
+                <div class="editor-section" id="editor-controls-section">
+                    <h4 class="editor-sub-title"><i class="fa-solid fa-wand-magic-sparkles"></i> اختر تأثيراً كلاسيكياً:</h4>
+                    <div class="filter-options-grid">
+                        <button class="filter-btn active" data-filter="normal">
+                            <span class="filter-thumb normal-thumb"></span>
+                            <span>طبيعي</span>
+                        </button>
+                        <button class="filter-btn" data-filter="vintage">
+                            <span class="filter-thumb vintage-thumb"></span>
+                            <span>كلاسيكي</span>
+                        </button>
+                        <button class="filter-btn" data-filter="warm">
+                            <span class="filter-thumb warm-thumb"></span>
+                            <span>دافئ</span>
+                        </button>
+                        <button class="filter-btn" data-filter="sepia">
+                            <span class="filter-thumb sepia-thumb"></span>
+                            <span>سيبيا</span>
+                        </button>
+                        <button class="filter-btn" data-filter="noir">
+                            <span class="filter-thumb noir-thumb"></span>
+                            <span>أبيض وأسود</span>
+                        </button>
+                        <button class="filter-btn" data-filter="dreamy">
+                            <span class="filter-thumb dreamy-thumb"></span>
+                            <span>حالم</span>
+                        </button>
+                    </div>
+
+                    <!-- Custom Caption Input -->
+                    <div class="caption-input-wrapper">
+                        <label for="caption-input"><i class="fa-solid fa-quote-right"></i> اكتب تعليقاً لهذه الصورة:</label>
+                        <input type="text" id="caption-input" placeholder="مثال: ذكريات يوم جميل..." maxlength="45">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Action Buttons -->
+            <div class="modal-footer">
+                <button class="modal-action-btn delete-btn" id="delete-photo-btn"><i class="fa-solid fa-trash-can"></i> حذف الصورة</button>
+                <div class="primary-actions">
+                    <button class="modal-action-btn cancel-btn" id="cancel-upload">إلغاء</button>
+                    <button class="modal-action-btn save-btn" id="save-photo-btn"><i class="fa-solid fa-circle-check"></i> حفظ التعديل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
