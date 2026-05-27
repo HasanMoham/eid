@@ -138,8 +138,8 @@ const DEFAULT_PHOTOS = {
     f2: { src: 'assets/11.jpeg', caption: 'رحلة تحت النجوم 🌌', filter: 'normal' },
     f3: { src: 'assets/13.jpeg', caption: 'مغامرات جديدة 🎒', filter: 'normal' },
     f4: { src: 'assets/8.jpeg', caption: 'عائلتنا السعيدة 👨‍👩‍👧', filter: 'normal' },
-    f5: { src: 'assets/photo3.png', caption: 'بناء ذكريات أكثر 🛠️', filter: 'normal' },
-    f6: { src: 'assets/photo5.png', caption: 'تفاصيل جميلة ✨', filter: 'warm' }
+    f5: { src: 'assets/12.png', caption: 'بناء ذكريات أكثر 🛠️', filter: 'normal' },
+    f6: { src: 'assets/7.png', caption: 'تفاصيل جميلة ✨', filter: 'warm' }
 };
 
 // ==========================================================================

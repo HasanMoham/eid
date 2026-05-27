@@ -124,12 +124,13 @@ body {
 .app-container {
     position: relative;
     z-index: 2;
-    max-width: 1280px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 24px 20px 60px 20px;
+    padding: 20px 16px 50px 16px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 36px;
+    width: 100%;
 }
 
 /* ==========================================================================
@@ -313,7 +314,7 @@ body {
 
 .main-greeting {
     font-family: var(--font-title);
-    font-size: 3rem;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
     font-weight: 800;
     color: var(--dark-neutral);
     max-width: 800px;
@@ -329,10 +330,11 @@ body {
 }
 
 .sub-greeting {
-    font-size: 1.15rem;
+    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
     color: #5c4e53;
     max-width: 600px;
     font-weight: 500;
+    padding: 0 8px;
 }
 
 /* Title text micro-animation */
@@ -357,8 +359,8 @@ body {
 
 .album-content {
     display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 40px;
+    grid-template-columns: minmax(260px, 320px) 1fr;
+    gap: 30px;
     align-items: start;
 }
 
@@ -570,9 +572,9 @@ body {
 }
 
 .horizontal-slot {
-    width: 250px;
+    width: 220px;
     flex-shrink: 0;
-    padding: 14px 14px 34px 14px;
+    padding: 12px 12px 30px 12px;
 }
 
 .horizontal-slot:hover {
@@ -1019,14 +1021,40 @@ body {
    RESPONSIVENESS (GRID FLUIDITY)
    ========================================================================== */
 
+/* ---------- LAPTOP / SMALL DESKTOP (fits without zoom-out) ---------- */
+@media (max-width: 1200px) {
+    .app-container {
+        max-width: 960px;
+        padding: 18px 14px 40px 14px;
+    }
+
+    .album-content {
+        grid-template-columns: minmax(240px, 280px) 1fr;
+        gap: 24px;
+    }
+
+    .horizontal-slot {
+        width: 200px;
+    }
+
+    .glass-header {
+        padding: 12px 20px;
+    }
+
+    .header-logo .logo-text {
+        font-size: 1.3rem;
+    }
+}
+
+/* ---------- TABLET / SMALL LAPTOP ---------- */
 @media (max-width: 1024px) {
     .album-content {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 28px;
     }
     
     .vertical-section {
-        max-width: 480px;
+        max-width: 420px;
         margin: 0 auto;
         width: 100%;
     }
@@ -1034,61 +1062,287 @@ body {
     .horizontal-strip {
         justify-content: flex-start;
     }
+
+    .future-strip {
+        justify-content: flex-start;
+    }
 }
 
+/* ---------- TABLET PORTRAIT ---------- */
 @media (max-width: 768px) {
-    .main-greeting {
-        font-size: 2.2rem;
-    }
-    
-    .sub-greeting {
-        font-size: 1rem;
-    }
-    
     .glass-header {
-        padding: 10px 20px;
+        padding: 10px 16px;
+        border-radius: 16px;
+        top: 10px;
     }
     
     .header-logo .logo-text {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
+    }
+    
+    .control-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .header-controls {
+        gap: 10px;
     }
     
     .app-container {
-        padding: 12px 12px 40px 12px;
-        gap: 24px;
+        padding: 10px 10px 36px 10px;
+        gap: 22px;
+    }
+
+    .hero-section {
+        padding: 14px 8px;
+        gap: 12px;
+    }
+
+    .romantic-badge {
+        font-size: 0.78rem;
+        padding: 5px 12px;
+    }
+
+    .vertical-section {
+        max-width: 360px;
+    }
+
+    .film-strip {
+        padding: 18px 14px;
+        gap: 16px;
+    }
+
+    .horizontal-slot {
+        width: 190px;
+        padding: 10px 10px 28px 10px;
+    }
+
+    .horizontal-strip {
+        padding: 28px 20px;
+        gap: 18px;
     }
     
     .filter-options-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .love-note-card {
+        padding: 20px;
+    }
+
+    .love-note-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .love-note-body p {
+        font-size: 0.95rem;
+        min-height: 60px;
+    }
+
+    .future-moments-section {
+        margin-top: 30px;
+        gap: 14px;
+    }
+
+    .future-desc {
+        font-size: 0.95rem;
+    }
+
+    .modal-content {
+        border-radius: 22px;
+        max-width: 95vw;
+    }
+
+    .modal-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .pool-management-card {
+        padding: 12px 16px;
+    }
+
+    .pool-toggle-btn {
+        font-size: 0.9rem;
     }
 }
 
+/* ---------- MOBILE ---------- */
 @media (max-width: 480px) {
-    .main-greeting {
-        font-size: 1.85rem;
+    .app-container {
+        padding: 8px 6px 30px 6px;
+        gap: 18px;
     }
-    
-    .horizontal-slot {
-        width: 220px;
-        padding: 10px 10px 30px 10px;
+
+    .glass-header {
+        padding: 8px 12px;
+        border-radius: 14px;
+        top: 6px;
     }
-    
+
+    .header-logo .logo-text {
+        font-size: 1rem;
+    }
+
+    .control-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .header-controls {
+        gap: 8px;
+    }
+
+    .hero-section {
+        padding: 10px 4px;
+        gap: 10px;
+    }
+
+    .romantic-badge {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+        gap: 6px;
+    }
+
+    .vertical-section {
+        max-width: 100%;
+    }
+
+    .film-strip {
+        padding: 14px 10px;
+        gap: 14px;
+        border-radius: 8px;
+    }
+
     .photo-slot {
-        padding: 10px 10px 30px 10px;
+        padding: 8px 8px 26px 8px;
     }
-    
+
     .slot-caption {
-        font-size: 0.85rem;
-        bottom: 6px;
+        font-size: 0.8rem;
+        bottom: 5px;
     }
-    
+
+    .slot-placeholder {
+        font-size: 0.78rem;
+        gap: 8px;
+    }
+
+    .upload-icon {
+        font-size: 1.4rem;
+    }
+
+    .horizontal-slot {
+        width: 170px;
+        padding: 8px 8px 26px 8px;
+    }
+
+    .horizontal-strip {
+        padding: 22px 14px;
+        gap: 14px;
+    }
+
+    .sprockets-row span {
+        width: 10px;
+        height: 6px;
+    }
+
+    .love-note-card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .love-note-header h3 {
+        font-size: 1.05rem;
+    }
+
+    .love-note-body {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .love-note-body p {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        min-height: 50px;
+    }
+
+    .section-label {
+        font-size: 0.95rem;
+        gap: 8px;
+    }
+
+    .section-label i {
+        font-size: 1.05rem;
+    }
+
+    .future-moments-section {
+        margin-top: 20px;
+        gap: 12px;
+    }
+
+    .future-desc {
+        font-size: 0.88rem;
+        padding: 0 4px;
+    }
+
+    .modal-overlay {
+        padding: 10px;
+    }
+
+    .modal-content {
+        border-radius: 18px;
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .modal-header h3 {
+        font-size: 1.05rem;
+    }
+
+    .upload-dropzone {
+        min-height: 160px;
+        border-radius: 14px;
+    }
+
+    .upload-big-icon {
+        font-size: 2.2rem;
+    }
+
+    .filter-options-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 0.72rem;
+        gap: 5px;
+    }
+
+    .filter-thumb {
+        width: 36px;
+        height: 36px;
+    }
+
+    .caption-input-wrapper input {
+        padding: 10px 12px;
+        font-size: 0.88rem;
+        border-radius: 10px;
+    }
+
     .modal-footer {
         flex-direction: column-reverse;
-        gap: 12px;
+        gap: 10px;
+        padding-top: 12px;
     }
     
     .primary-actions {
         width: 100%;
+        gap: 8px;
     }
     
     .primary-actions .cancel-btn,
@@ -1097,6 +1351,106 @@ body {
         flex: 1;
         justify-content: center;
         width: 100%;
+        padding: 10px 14px;
+        font-size: 0.88rem;
+    }
+
+    .modal-action-btn {
+        border-radius: 10px;
+        padding: 9px 16px;
+        font-size: 0.88rem;
+    }
+
+    .pool-management-card {
+        padding: 10px 12px;
+        border-radius: 18px;
+    }
+
+    .pool-toggle-btn {
+        font-size: 0.82rem;
+        padding: 8px 0;
+    }
+
+    .app-footer {
+        font-size: 0.8rem;
+        padding-top: 14px;
+        margin-top: 14px;
+    }
+}
+
+/* ---------- VERY SMALL PHONE (360px and below) ---------- */
+@media (max-width: 360px) {
+    .app-container {
+        padding: 6px 4px 24px 4px;
+        gap: 14px;
+    }
+
+    .glass-header {
+        padding: 6px 10px;
+        border-radius: 12px;
+    }
+
+    .header-logo .logo-text {
+        font-size: 0.88rem;
+    }
+
+    .control-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.82rem;
+    }
+
+    .romantic-badge {
+        font-size: 0.66rem;
+        padding: 3px 8px;
+    }
+
+    .film-strip {
+        padding: 10px 8px;
+        gap: 10px;
+    }
+
+    .photo-slot {
+        padding: 6px 6px 22px 6px;
+    }
+
+    .horizontal-slot {
+        width: 150px;
+        padding: 6px 6px 22px 6px;
+    }
+
+    .horizontal-strip {
+        padding: 18px 10px;
+        gap: 10px;
+    }
+
+    .slot-caption {
+        font-size: 0.72rem;
+    }
+
+    .love-note-card {
+        padding: 12px;
+    }
+
+    .love-note-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .love-note-body p {
+        font-size: 0.82rem;
+    }
+
+    .modal-content {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .modal-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .filter-options-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1278,6 +1632,7 @@ body {
 @media (max-width: 1024px) {
     .pool-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
     }
     .pool-grid-wrapper.open {
         max-height: 800px;
@@ -1287,9 +1642,30 @@ body {
 @media (max-width: 580px) {
     .pool-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
     .pool-grid-wrapper.open {
         max-height: 1100px;
+    }
+
+    .pool-slot-card {
+        padding: 6px;
+        border-radius: 10px;
+    }
+
+    .pool-slot-title {
+        font-size: 0.72rem;
+    }
+
+    .pool-slot-desc {
+        font-size: 0.64rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .pool-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
 }
 
